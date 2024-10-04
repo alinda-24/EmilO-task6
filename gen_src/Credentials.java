@@ -1,6 +1,3 @@
-Filename: Credentials.java
-
-```java
 public class Credentials extends SecureData {
     private String username;
     private String password;
@@ -17,4 +14,3 @@ public class Credentials extends SecureData {
         // Method implementation
     }
 }
-```

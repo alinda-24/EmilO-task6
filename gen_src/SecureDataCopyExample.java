@@ -1,4 +1,3 @@
-// File: SecureDataCopyExample.java
 public class SecureDataCopyExample {
 
     static class Credentials {

@@ -1,5 +1,3 @@
-// MessageEncryptor.java
-
 public class MessageEncryptor {
 
     public static String encryptMessage(String message, int key) {

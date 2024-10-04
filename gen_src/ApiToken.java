@@ -1,5 +1,3 @@
-ApiToken.java
-```java
 public class ApiToken extends SecureData {
     private String tokenValue;
 
@@ -10,4 +8,3 @@ public class ApiToken extends SecureData {
     public String getTokenValue() {
     }
 }
-```

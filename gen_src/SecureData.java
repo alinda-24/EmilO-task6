@@ -1,4 +1,3 @@
-// File: SecureData.java
 public class SecureData {
     private String dataId;
     private long createdAt;
