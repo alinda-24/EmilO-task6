@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.*;
 
 // Class representing a session manager
 public class SessionManager {
@@ -9,23 +9,36 @@ public class SessionManager {
 
         // Constructor for UserSession
         UserSession(long sessionExpiry) {
-            // Implementation not shown
+            this.sessionExpiry = sessionExpiry;
         }
 
         // Method to check if the session is expired
         boolean isExpired() {
-            // Implementation not shown
-            return false;
+            return System.currentTimeMillis() > sessionExpiry;
         }
     }
 
     // Method to remove expired sessions from a list
     public static void removeExpiredSessions(List<UserSession> sessions) {
-        // Implementation not shown
+        Iterator<UserSession> iterator = sessions.iterator();
+        while (iterator.hasNext()) {
+            UserSession session = iterator.next();
+            if (session.isExpired()) {
+                iterator.remove();
+            }
+        }
     }
 
     // Main method to demonstrate session management
     public static void main(String[] args) {
-        // Implementation not shown
+        List<UserSession> sessions = new ArrayList<>();
+        sessions.add(new UserSession(System.currentTimeMillis() - 10000)); // Expired session
+        sessions.add(new UserSession(System.currentTimeMillis() + 1000));  // Active session
+        sessions.add(new UserSession(System.currentTimeMillis() - 4000));  // Expired session
+        sessions.add(new UserSession(System.currentTimeMillis() + 50000)); // Active session
+
+        removeExpiredSessions(sessions);
+
+        System.out.println("Active sessions count: " + sessions.size());
     }
 }

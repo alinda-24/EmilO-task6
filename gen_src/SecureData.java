@@ -1,17 +1,17 @@
-// File: SecureData.java
 public class SecureData {
     private String dataId;
     private long createdAt;
 
     public SecureData(String dataId) {
-        // Constructor logic
+        this.dataId = dataId;
+        this.createdAt = System.currentTimeMillis();
     }
 
     public String getDataId() {
-        // Method logic
+        return dataId;
     }
 
     public long getCreatedAt() {
-        // Method logic
+        return createdAt;
     }
 }

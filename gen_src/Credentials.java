@@ -1,20 +1,27 @@
-Filename: Credentials.java
-
-```java
 public class Credentials extends SecureData {
-    private String username;
+    private final String username;
     private String password;
 
     public Credentials(String dataId, String username, String password) {
-        // Constructor implementation
+        super(dataId);
+        this.username = username;
+        this.password = password;
     }
 
     public String getUsername() {
-        // Method implementation
+        return username;
     }
 
     public String getPassword() {
-        // Method implementation
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "Data ID: " + getDataId() + ", Username: " + username + ", Password: " + password;
     }
 }
-```
