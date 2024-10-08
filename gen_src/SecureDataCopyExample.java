@@ -1,20 +1,5 @@
 public class SecureDataCopyExample {
 
-    static class Credentials {
-        String username;
-        String password;
-
-        Credentials(String username, String password) {
-            this.username = username;
-            this.password = password;
-        }
-
-        public Credentials(Credentials original) {
-            this.username = original.username;
-            this.password = original.password;
-        }
-    }
-
     public static Credentials[] shallowCopy(Credentials[] original) {
         return original.clone();
     }
@@ -23,7 +8,7 @@ public class SecureDataCopyExample {
         Credentials[] copy = new Credentials[original.length];
 
         for (int i = 0; i < original.length; i++) {
-            copy[i] = new Credentials(original[i]);
+            copy[i] = new Credentials(original[i].getDataId(), original[i].getUsername(), original[i].getPassword());
         }
 
         return copy;
@@ -31,23 +16,23 @@ public class SecureDataCopyExample {
 
     public static void printOutArray(Credentials[] array){
         for (Credentials credentials : array) {
-            System.out.println(credentials.username + ", " + credentials.password);
+            System.out.println(credentials);
         }
     }
 
     public static void main(String[] args) {
         Credentials[] originalArray = {
-            new Credentials("user1", "pass1"),
-            new Credentials("user2", "pass2"),
-            new Credentials("user3", "pass3")
+            new Credentials("ID1", "user1", "pass1"),
+            new Credentials("ID2", "user2", "pass2"),
+            new Credentials("ID3", "user3", "pass3")
         };
 
         Credentials[] shallowCopyArray = shallowCopy(originalArray);
 
         Credentials[] deepCopyArray = deepCopy(originalArray);
 
-        shallowCopyArray[0].password = "newShallowPass";  // This will also affect the original
-        deepCopyArray[1].password = "newDeepPass";        // This will not affect the original
+        shallowCopyArray[0].setPassword("newShallowPass");  // This will also affect the original
+        deepCopyArray[1].setPassword("newDeepPass");        // This will not affect the original
 
         System.out.println("Original Array:");
         printOutArray(originalArray);
