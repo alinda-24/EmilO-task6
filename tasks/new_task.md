@@ -71,7 +71,7 @@ public String encryptMessage(String message, int key) {
 - [x] Exercises 1 & 2: Answer theoretical questions on `Random` and the ternary operator.
 - [x] Exercise 3: Implement shallow and deep copy in a security context.
 - [x] Exercise 4: Identify and correct bugs in a code snippet.
-- [ ] Exercise 5: Safely modify a collection using an iterator.
+- [x] Exercise 5: Safely modify a collection using an iterator.
 - [x] Exercise 6: Utilize inheritance to enhance code reusability.
 
 ### 🌟 Tips for Success
