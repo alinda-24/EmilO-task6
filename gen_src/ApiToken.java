@@ -3,8 +3,10 @@ public class ApiToken extends SecureData {
 
     public ApiToken(String dataId, String tokenValue) {
         super(dataId);
+        this.tokenValue = tokenValue;
     }
 
     public String getTokenValue() {
+        return tokenValue;
     }
 }

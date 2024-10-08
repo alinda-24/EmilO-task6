@@ -5,16 +5,18 @@ public class SecureDataCopyExample {
         String password;
 
         Credentials(String username, String password) {
-            // Constructor implementation
+            this.username = username;
+            this.password = password;
         }
 
         public Credentials(Credentials original) {
-            // Copy constructor implementation
+            this.username = original.username;
+            this.password = original.password;
         }
     }
 
     public static Credentials[] shallowCopy(Credentials[] original) {
-        // Method to perform shallow copy
+        return original.clone();
     }
 
     public static Credentials[] deepCopy(Credentials[] original) {

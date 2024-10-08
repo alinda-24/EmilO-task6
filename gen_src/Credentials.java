@@ -3,14 +3,16 @@ public class Credentials extends SecureData {
     private String password;
 
     public Credentials(String dataId, String username, String password) {
-        // Constructor implementation
+        super(dataId);
+        this.username = username;
+        this.password = password;
     }
 
     public String getUsername() {
-        // Method implementation
+        return username;
     }
 
     public String getPassword() {
-        // Method implementation
+        return password;
     }
 }
