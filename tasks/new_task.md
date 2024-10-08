@@ -69,7 +69,7 @@ public String encryptMessage(String message, int key) {
 
 ### 📝 Checklist
 - [x] Exercises 1 & 2: Answer theoretical questions on `Random` and the ternary operator.
-- [ ] Exercise 3: Implement shallow and deep copy in a security context.
+- [x] Exercise 3: Implement shallow and deep copy in a security context.
 - [ ] Exercise 4: Identify and correct bugs in a code snippet.
 - [ ] Exercise 5: Safely modify a collection using an iterator.
 - [ ] Exercise 6: Utilize inheritance to enhance code reusability.
